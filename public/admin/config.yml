@@ -8,20 +8,30 @@ public_folder: "/uploads"
 collections:
   - name: "blogs"
     label: "Blogs"
-    folder: "content/blogs"
-    create: true
-    format: "json"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Content", name: "body", widget: "text" }
+    files:
+      - name: "blogs"
+        label: "Blogs List"
+        file: "public/content/blogs.json"
+        fields:
+          - label: "Blogs"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date" }
+              - { label: "Body", name: "body", widget: "text" }
 
   - name: "events"
     label: "Events"
-    folder: "content/events"
-    create: true
-    format: "json"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
+    files:
+      - name: "events"
+        label: "Events List"
+        file: "public/content/events.json"
+        fields:
+          - label: "Events"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date" }
+              - { label: "Description", name: "description", widget: "text" }

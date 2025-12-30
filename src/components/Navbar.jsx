@@ -30,6 +30,15 @@ export default function Navbar() {
             Home
           </Link>
 
+          {/* BLOGS */}
+          <Link
+            to="/blogs"
+            className={location.pathname === "/blogs" ? "active" : ""}
+          >
+            Blogs
+          </Link>
+
+          {/* REGISTER CTA */}
           <Link
             to="/register"
             className={`cta-nav ${
