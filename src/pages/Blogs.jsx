@@ -7,11 +7,11 @@ export default function Blogs() {
     fetch("/content/blogs.json")
       .then((res) => res.json())
       .then((data) => {
-        if (!Array.isArray(data)) return;
-        data.sort(
+        if (!data?.blogs) return;   // FIX
+        const sorted = [...data.blogs].sort(
           (a, b) => new Date(b.date || 0) - new Date(a.date || 0)
         );
-        setBlogs(data);
+        setBlogs(sorted);
       })
       .catch((err) =>
         console.error("Failed to load blogs:", err)

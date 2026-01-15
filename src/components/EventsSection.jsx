@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 export default function EventsSection() {
   const [events, setEvents] = useState([]);
@@ -8,8 +8,8 @@ export default function EventsSection() {
     fetch("/content/events.json")
       .then((res) => res.json())
       .then((data) => {
-        if (!Array.isArray(data)) return;
-        setEvents(data);
+        if (!data?.events) return;   // NEW
+        setEvents(data.events);     // NEW
       })
       .catch(console.error);
   }, []);
