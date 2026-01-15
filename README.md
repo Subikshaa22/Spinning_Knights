@@ -1,2 +1,2 @@
 # Spinning_Knights
-Code for the chess academy websit
+Code for the chess academy website
