@@ -6,6 +6,7 @@ media_folder: "public/uploads"
 public_folder: "/uploads"
 
 collections:
+
   - name: "blogs"
     label: "Blogs"
     files:
@@ -14,12 +15,12 @@ collections:
         file: "public/content/blogs.json"
         fields:
           - label: "Blogs"
-            name: "items"
+            name: "blogs"
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
               - { label: "Date", name: "date", widget: "date" }
-              - { label: "Body", name: "body", widget: "text" }
 
   - name: "events"
     label: "Events"
@@ -29,7 +30,7 @@ collections:
         file: "public/content/events.json"
         fields:
           - label: "Events"
-            name: "items"
+            name: "events"
             widget: "list"
             fields:
               - { label: "Title", name: "title", widget: "string" }
